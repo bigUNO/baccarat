@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - run:
+          name: Installing depeds
+          command: go get -v -t -d ./...
+      - run:
+          name: Run Unit test
+          command: go test -v ./...
+      - run:
+          name: Build example
+          command: go build example/*
