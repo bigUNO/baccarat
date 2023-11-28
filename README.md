@@ -5,7 +5,7 @@ A simple package that provides baccarat functionality.
 ## Installation
 
 ```
-go get -u github.com/bigUNO/baccarat
+go install github.com/bigUNO/baccarat@latest
 ```
 
 ## Quick Start
