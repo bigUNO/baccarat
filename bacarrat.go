@@ -9,7 +9,7 @@ import (
 
 // Baccarat holds information about the hand.
 //
-// Represents all the acticities that would take place at a table in a casino.
+// Represents all the activities that would take place at a table in a casino.
 type Baccarat struct {
 	croupier croupier.Croupier
 	ID       int64
@@ -18,7 +18,7 @@ type Baccarat struct {
 	digitalPad DigitalPad
 }
 
-// New retuns a new game of bacarrat
+// New returns a new game of baccarat
 func New() (*Baccarat, error) {
 	baccarat := &Baccarat{
 		croupier:   croupier.NewCroupier(),
@@ -28,7 +28,7 @@ func New() (*Baccarat, error) {
 	return baccarat, nil
 }
 
-// Start deals a hand of barrarat.
+// Start deals a hand of baccarat.
 func (b *Baccarat) Start() {
 	// TODO: Collect bets
 	b.croupier.Deal()
