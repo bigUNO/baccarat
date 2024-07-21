@@ -1,16 +1,29 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/golang:latest
+      - image: cimg/go:1.21
     steps:
+      # Checkout the code as the first step.
       - checkout
       - run:
-          name: Installing depeds
-          command: go get -v -t -d ./...
+          name: Install Dependencies
+          command: go mod download
       - run:
-          name: Run Unit test
-          command: go test -v ./...
+          name: Run tests
+          command: |
+            mkdir -p /tmp/test-reports
+            gotestsum --junitfile /tmp/test-reports/unit-tests.xml
+      - store_test_results:
+          path: /tmp/test-reports
       - run:
           name: Build example
           command: go build example/*
+
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
+    jobs:
+      - build
