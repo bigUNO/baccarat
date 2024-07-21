@@ -1,4 +1,4 @@
-# :black_joker: baccarat [![CircleCI](https://circleci.com/gh/bigUNO/baccarat/tree/master.svg?style=svg)](https://circleci.com/gh/bigUNO/baccarat/tree/master)
+# :black_joker: baccarat [![CircleCI](https://dl.circleci.com/status-badge/img/gh/bigUNO/baccarat/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/bigUNO/baccarat/tree/main)
 
 A simple package that provides baccarat functionality.
 
@@ -25,6 +25,4 @@ game.Start()
 game.CloseHand()
 ```
 
-## Development Status: Unstable
-
-Breaking changes are coming soon.
+## Development Status: Stable-ish
